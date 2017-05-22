@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from django.db import models
 from __future__ import unicode_literals
+from django.db import models
 
 from django.db import models
 
@@ -11,6 +11,6 @@ class Question(models.Model):
 
 
 class Choice(models.Model):
-	question=models.ForiegnKey(Question, on_delete.CASCADE)
+	question=models.ForeignKey(Question, on_delete=models.CASCADE)
 	choice_text=models.CharField(max_length=200)
 	votes=models.IntegerField(default=0)
